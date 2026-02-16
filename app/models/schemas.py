@@ -1,6 +1,9 @@
 from datetime import datetime
 from enum import Enum
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
 from pydantic import BaseModel, EmailStr, Field
 
 
@@ -9,12 +12,15 @@ class AgentType(str, Enum):
     ai = "ai"
 
 
+<<<<<<< HEAD
 class RoleType(str, Enum):
     admin = "admin"
     human_agent = "human_agent"
     ai_agent = "ai_agent"
 
 
+=======
+>>>>>>> origin/main
 class LeadStatus(str, Enum):
     new = "new"
     attempted = "attempted"
@@ -29,6 +35,7 @@ class LoginRequest(BaseModel):
     password: str = Field(min_length=8)
 
 
+<<<<<<< HEAD
 class LoginResponse(BaseModel):
     access_token: str
     token_type: str = "bearer"
@@ -36,6 +43,8 @@ class LoginResponse(BaseModel):
     tenant_id: int
 
 
+=======
+>>>>>>> origin/main
 class LeadBase(BaseModel):
     full_name: str
     phone_number: str
@@ -45,6 +54,7 @@ class LeadBase(BaseModel):
 
 class LeadCreate(LeadBase):
     assigned_to_type: AgentType
+<<<<<<< HEAD
     assigned_to_id: int
 
 
@@ -52,6 +62,9 @@ class LeadRead(LeadBase):
     id: int
     status: LeadStatus
     comment: str | None = None
+=======
+    assigned_to_id: str
+>>>>>>> origin/main
 
 
 class LeadUpdate(BaseModel):

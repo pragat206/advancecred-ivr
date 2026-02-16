@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from datetime import datetime
 
 from fastapi import APIRouter, Depends
@@ -7,12 +8,17 @@ from sqlalchemy.orm import Session
 from app.auth.dependencies import CurrentUser, require_role
 from app.db.models import Call, Lead, LeadStatus, Role, Transcript, User
 from app.db.session import get_db
+=======
+from fastapi import APIRouter
+
+>>>>>>> origin/main
 from app.models.schemas import DashboardKPI, LeadCreate, TranscriptEntry
 
 router = APIRouter(prefix="/admin", tags=["admin"])
 
 
 @router.post("/leads/bulk-import")
+<<<<<<< HEAD
 def bulk_import_leads(
     payload: list[LeadCreate],
     db: Session = Depends(get_db),
@@ -89,3 +95,28 @@ def agent_availability(
         .all()
     )
     return [{"id": a.id, "email": a.email, "role": a.role.value, "max_concurrent_calls": a.max_concurrent_calls} for a in agents]
+=======
+def bulk_import_leads(payload: list[LeadCreate]) -> dict:
+    """Queue a bulk lead import job; persistence is implemented by service layer."""
+    return {"accepted": len(payload), "status": "queued"}
+
+
+@router.get("/transcripts/{call_id}", response_model=list[TranscriptEntry])
+def get_call_transcript(call_id: str) -> list[TranscriptEntry]:
+    """Get transcript for a human or AI call by call id."""
+    return []
+
+
+@router.get("/dashboard", response_model=DashboardKPI)
+def admin_dashboard() -> DashboardKPI:
+    """Return holistic metrics for enterprise dashboard cards and charts."""
+    from datetime import datetime
+
+    return DashboardKPI(
+        date=datetime.utcnow(),
+        total_calls=0,
+        connected_calls=0,
+        converted_calls=0,
+        avg_duration_seconds=0,
+    )
+>>>>>>> origin/main

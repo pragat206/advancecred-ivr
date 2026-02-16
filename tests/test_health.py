@@ -1,7 +1,10 @@
 from fastapi.testclient import TestClient
 
 from app.main import app
+<<<<<<< HEAD
 from app.services.ai_orchestrator import AIAgentOrchestrator, AIAgentPolicy
+=======
+>>>>>>> origin/main
 
 
 def test_health() -> None:
@@ -9,6 +12,7 @@ def test_health() -> None:
     response = client.get('/health')
     assert response.status_code == 200
     assert response.json()['status'] == 'ok'
+<<<<<<< HEAD
 
 
 def test_ui_loads() -> None:
@@ -29,3 +33,5 @@ def test_orchestrator_prompt() -> None:
     )
     assert 'Sales assistant' in prompt
     assert 'hi-IN' in prompt
+=======
+>>>>>>> origin/main
