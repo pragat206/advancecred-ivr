@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AdvanceCred IVR Command Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <nav class="nav">
+        <button class="nav-btn active">Executive Dashboard</button>
+        <button class="nav-btn">Lead Operations</button>
+        <button class="nav-btn">AI Voice Agents</button>
+        <button class="nav-btn">Human Agents</button>
+        <button class="nav-btn">Transcripts & QA</button>
+        <button class="nav-btn">Compliance Logs</button>
+      </nav>
+
+      <section class="sidebar-panel">
+        <h4>System Health</h4>
+        <div class="status-row"><span>Telephony</span><strong class="ok">Operational</strong></div>
+        <div class="status-row"><span>AI Runtime</span><strong class="ok">Operational</strong></div>
+        <div class="status-row"><span>Queue Depth</span><strong>42 Calls</strong></div>
+      </section>
+    </aside>
+
+    <main class="content">
+      <header class="header">
+        <div class="header-left">
+          <img src="/static/advancecred-logo.svg" alt="advanceCred" class="header-logo" />
+          <div class="header-copy">
+            <h2>Enterprise IVR Dashboard</h2>
+            <p>Real-time view across AI + Human operations, conversion funnel, and transfer readiness.</p>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button class="secondary">Export Report</button>
+          <button class="primary">Bulk Import Leads</button>
+        </div>
+      </header>
+
+      <section class="kpis" id="kpis"></section>
+
+      <section class="two-col">
+        <article class="panel">
+          <div class="panel-head">
+            <h3>Daily Conversion Funnel</h3>
+            <span class="badge">Today</span>
+          </div>
+          <div class="funnel" id="funnel"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <h3>Transfer Readiness</h3>
+            <span class="badge neutral">Live</span>
+          </div>
+          <div class="transfer-list" id="transfer-list"></div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h3>Assigned Lead Work Queue</h3>
+          <button class="tertiary">View Full Queue</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Lead</th>
+              <th>Phone</th>
+              <th>Assigned To</th>
+              <th>Status</th>
+              <th>Priority</th>
+              <th>Last Update</th>
+            </tr>
+          </thead>
+          <tbody id="lead-table"></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

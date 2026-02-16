@@ -1,0 +1,7 @@
+<svg width="640" height="150" viewBox="0 0 640 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="advanceCred logo">
+  <rect width="640" height="150" fill="transparent"/>
+  <text x="10" y="78" font-family="Georgia, 'Times New Roman', serif" font-size="86" font-weight="700" fill="#14c9de">advance</text>
+  <text x="348" y="78" font-family="Georgia, 'Times New Roman', serif" font-size="86" font-weight="700" fill="#0b0e13">Cred</text>
+  <text x="252" y="116" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="500" fill="#0b0e13">Simplifying Credits, Advancing Lives</text>
+  <path d="M250 127 C345 114, 470 114, 575 127" stroke="#14c9de" stroke-width="5" fill="none"/>
+</svg>
